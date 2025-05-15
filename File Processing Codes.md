@@ -1,12 +1,12 @@
 
 ---
 ```
-  
-  _____ _ _        ____                              _              
- |  ___(_) | ___  |  _ \ _ __ ___   ___ ___  ___ ___(_)_ __   __ _  
- | |_  | | |/ _ \ | |_) | '__/ _ \ / __/ _ \/ __/ __| | '_ \ / _` | 
- |  _| | | |  __/ |  __/| | | (_) | (_|  __/\__ \__ \ | | | | (_| | 
- |_|   |_|_|\___| |_|   |_|  \___/ \___\___||___/___/_|_| |_|\__, | 
+
+  _____ _ _        ____                              _
+ |  ___(_) | ___  |  _ \ _ __ ___   ___ ___  ___ ___(_)_ __   __ _
+ | |_  | | |/ _ \ | |_) | '__/ _ \ / __/ _ \/ __/ __| | '_ \ / _` |
+ |  _| | | |  __/ |  __/| | | (_) | (_|  __/\__ \__ \ | | | | (_| |
+ |_|   |_|_|\___| |_|   |_|  \___/ \___\___||___/___/_|_| |_|\__, |
                                                 |___/
 ```
 
@@ -148,17 +148,17 @@ struct clientData
 {
     int acctNum;
     char FirstName[20];
-    char LastName[20];  
+    char LastName[20];
 };
 
 int main()
 {
     clientData client;
     fstream file("D:\Hunters.dat", ios::in | ios::out | ios::binary);
-    
+
     if (!file.is_open())
         cerr << "File Can Not Open" << endl;
-        
+
     else
     {
         while (true)
@@ -180,7 +180,7 @@ int main()
                 file.seekp((client.acctNum - 1) * sizeof(clientData), ios::beg);
                 file.write(reinterpret_cast<const char *>(&client), sizeof(clientData));
             }
-            
+
             else if (action == 'r')
             {
                 cout << "Enter Account number to Read (1 => 100): ";
@@ -200,7 +200,7 @@ int main()
 
 ---
 ```cs
-// زرار عرض الصور 
+// Image Show
   private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Image Files (*.bmp; *.png; *.jpg)| *.bmp; *.png; *.jpg";
@@ -209,8 +209,8 @@ int main()
                 pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
-        
-        // زرار الحفظ
+
+        // Save Data
         private void button2_Click(object sender, EventArgs e)
         {
             DataRow r = ds.Tables["t1"].NewRow();
@@ -225,7 +225,7 @@ int main()
             clear();
         }
 
-		// FUNCTION عشان نمسح البيانات
+		// FUNCTION Clear all information
         void clear()
         {
             textBox1.Clear();
@@ -233,7 +233,7 @@ int main()
             pictureBox1.Image.Dispose();
 
         }
-		// زرار العرض 
+		//View button
         private void button3_Click(object sender, EventArgs e)
         {
             foreach (DataRow r in ds.Tables["t1"].Rows)
@@ -249,12 +249,12 @@ int main()
                 }
             }
         }
-		// زرار عرض كلي 
+		// View Full Button
         private void button4_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = ds.Tables["t1"];
         }
-		// زرار عشان نخرج من البرنامج 
+		// To Exit The Program
         private void button5_Click(object sender, EventArgs e)
         {
             System.Environment.Exit(0);
@@ -298,7 +298,7 @@ namespace Root
             }
             return index;
         }
-        
+
         static void Main(string[] args)
         {
             string[] arr = {"Sung Jin-Woo","Thomas Andre"};
